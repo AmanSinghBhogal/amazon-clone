@@ -1,0 +1,7 @@
+.subtotal{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: max-content;
+    background-color: lightgrey;
+}
