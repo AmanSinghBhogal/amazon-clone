@@ -1,9 +1,18 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 import '../styles/CartProduct.css';
+import { useStateValue } from './StateProvider';
 
 function CartProduct({id, title, image, price_int, rating})
 {
+    const [{ cart }, dispatch] = useStateValue();
+
+    const removeCartItem = () => {
+        dispatch({
+            type: "REMOVE_ITEM_FROM_CART",
+            id: id
+        })
+    }
     return(
         <div className = 'cartProduct'>
             <div className='cartProduct__image'>
@@ -22,7 +31,7 @@ function CartProduct({id, title, image, price_int, rating})
                         ))
                     }
                 </div>
-                <button className='cartProduct__removeBtn'>Remove Item From Cart</button>
+                <button className='cartProduct__removeBtn' onClick={removeCartItem}>Remove Item From Cart</button>
             </div>
         </div>
     )
