@@ -1,5 +1,6 @@
 import { display } from '@mui/system';
 import React from 'react';
+import CurrencyFormat from 'react-currency-format';
 import '../styles/Product.css';
 import { useStateValue } from './StateProvider';
 
@@ -21,7 +22,6 @@ function Product({id, title, price_int, price_decimal, rating, image})
                 title: title,
                 image: image,
                 price_int: price_int,
-                price_decimal: price_decimal,
                 rating: rating
             }
         })
@@ -31,9 +31,7 @@ function Product({id, title, price_int, price_decimal, rating, image})
             <div className='product__info'>
                 <p>{title}</p>
                 <p className='product__price'>
-                    <small><sup>₹</sup></small>
-                    <strong>{price_int}</strong>
-                    <small><sup>{price_decimal}</sup></small>
+                    <CurrencyFormat value={price_int} displayType={'text'} thousandSeparator={true} prefix={'₹'} />
                 </p>
                 <div className='product__rating'>
                     {
