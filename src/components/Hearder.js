@@ -3,8 +3,12 @@ import '../styles/Header.css';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
+import { useStateValue } from './StateProvider';
 
 function Header(){
+    
+    const [{ cart }, dispatch] = useStateValue();
+
     return(
         <div className='header'>
             
@@ -36,7 +40,8 @@ function Header(){
                 <Link to="/checkout" style={{textDecoration: "none", color: "white"}}>
                     <div className='header_optionBasket header_option'>
                         <ShoppingCartIcon/>
-                        <span className='header_optionLineTwo header_basketCount'>0</span>
+                        {/* What the question mark does in the below line of code 'cart?.length' is that it will resolve any error if so occurs like if cart is not defined or anything like that. */}
+                        <span className='header_optionLineTwo header_basketCount'>{cart?.length}</span>
                     </div>
                 </Link>
             </div>

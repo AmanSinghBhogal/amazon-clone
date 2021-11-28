@@ -1,9 +1,31 @@
+import { display } from '@mui/system';
 import React from 'react';
 import '../styles/Product.css';
+import { useStateValue } from './StateProvider';
 
 
-function Product({title, price_int, price_decimal, rating, image})
+
+function Product({id, title, price_int, price_decimal, rating, image})
 {
+    const [state, dispatch] = useStateValue();
+    // const [{ cart }, dispatch] = useStateValue();
+
+    // console.log('Items in the Cart are => ', cart);
+
+    const AddToCart = () => {
+        // Dispatch item to the Data Layer.
+        dispatch({
+            type: "ADD_TO_CART",
+            item: {
+                id: id,
+                title: title,
+                image: image,
+                price_int: price_int,
+                price_decimal: price_decimal,
+                rating: rating
+            }
+        })
+    }
     return(
         <div className='product'>
             <div className='product__info'>
@@ -22,7 +44,7 @@ function Product({title, price_int, price_decimal, rating, image})
                 </div>
             </div>
             <img src={image} alt='Image Not Found.' />
-            <button>Add to Cart</button>
+            <button onClick={AddToCart}>Add to Cart</button>
         </div>
     );
 }
