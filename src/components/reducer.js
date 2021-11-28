@@ -17,12 +17,17 @@ const reducer = (state, action) =>{
 
     switch(action.type)
     {
+        // Code to Add Item to the Cart
         case "ADD_TO_CART": 
             return {
                 ...state,
                 cart: [...state.cart, action.item]
             };
+
+        
+        // Code to Remove a Item with Particular Id from the Cart.
         case "REMOVE_ITEM_FROM_CART":
+
             const index = state.cart.findIndex((cartItem) => cartItem.id == action.id);
             let newCart = [...state.cart];
             if(index >= 0)
