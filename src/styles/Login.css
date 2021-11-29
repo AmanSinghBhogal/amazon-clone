@@ -40,7 +40,7 @@
     margin-top: 10px;
     background-color: #f0c14b;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 .loginpage__instruction{
@@ -50,5 +50,5 @@
 
 .loginpage__createAccBtn{
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
 }

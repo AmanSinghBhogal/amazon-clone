@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Login.css';
 
 function Login()
 {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // The Sign in Function is defined below.
+    const SignIn = event =>
+    {
+        // The Below Line of code Prevents the page from refreshing.
+        event.preventDefault();
+
+        // console.log(`Email is: ${email}`);
+        // console.log(`Password is: ${password}`);
+
+        // Fancy FireBase Suff will go here
+    }
+
+    // To Register new User the Register function is defined below.
+    const RegisterUser = event =>
+    {
+        event.preventDefault(); // What this function does is that it prevents refreshing of the page when the button is clicked.
+
+        
+    }
     return(
         <div className='loginpage'>  
             <Link to="/">
@@ -22,16 +44,16 @@ function Login()
                 <p>
                     Email:
                 </p>
-                <input type='email'></input>
+                <input type='email' value={email} onChange={event => setEmail(event.target.value)}></input>
 
                 {/* Password Input */}
                 <p>
                     Password: 
                 </p>
-                <input type='password'></input>
+                <input type='password' value={password} onChange={event => setPassword(event.target.value)}></input>
 
                 {/* Sign In Button */}
-                <button className='loginpage__signinbtn'>Sign in</button>
+                <button type='submit' className='loginpage__signinbtn' onClick={SignIn}>Sign in</button>
 
                 {/* Instructions */}
                 <p className='loginpage__instruction'>
@@ -39,7 +61,7 @@ function Login()
                 </p>
 
                 {/* Create Account Button */}
-                <button className='loginpage__createAccBtn'>Create Your Amazon Account</button>
+                <button className='loginpage__createAccBtn' onClick={RegisterUser}>Create Your Amazon Account</button>
             </div>
         </div>
     );
