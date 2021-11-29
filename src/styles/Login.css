@@ -1,0 +1,22 @@
+.loginpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.loginpage__logo > img{
+    max-height: 40px;
+}
+.loginpage__logo{
+    margin-bottom: 10px;
+}
+.loginpage__box{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    background-color: white;
+}
