@@ -1,13 +1,13 @@
 .loginpage{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 10px;
 }
 
 .loginpage__logo > img{
     max-height: 40px;
+    object-fit: contain;
 }
 .loginpage__logo{
     margin-bottom: 10px;
@@ -15,8 +15,40 @@
 .loginpage__box{
     display: flex;
     flex-direction: column;
-    height: 300px;
+    padding: 20px;
+    height: fit-content;
     width: 300px;
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     background-color: white;
+    border-radius: 5px;
+}
+
+.loginpage__box > p{
+    margin: 5px 0;
+}
+.loginpage__box > h1{
+    margin-bottom: 15px;
+}
+
+.loginpage__box > input{
+    padding: 3px;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+.loginpage__signinbtn{
+    margin-top: 10px;
+    background-color: #f0c14b;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.loginpage__instruction{
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.loginpage__createAccBtn{
+    padding: 5px;
+    border-radius: 5px;
 }
