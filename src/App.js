@@ -1,33 +1,28 @@
 import './App.css';
-import Header from './components/Hearder';
 import Home from './components/Home';
 import { BrowserRouter as Router, Routes ,Route } from "react-router-dom";
 import Checkout from './components/Checkout';
+import Login from './components/Login';
 
 function App() {
   return (
-    <Router>
-        <div className="app">
+      <Router>
+          <div className="app">
+            <Routes>
+                {/* In React-routers version 6 the SWitch is replaced by Routes */} 
 
-          {/* Header is Rendered no matter what so we keep it outside the <Routes></Routes> component */}
+                {/* Login Page */}
+                <Route exact path = "/login" element = { <Login /> } />
 
-          <Header />
+                {/* Checkout Page */}
+                <Route exact path = "/checkout" element={ <Checkout /> } />
 
-          {/* In React-routers version 6 the SWitch is replaced by Routes */}
+                {/* Home Page Rendering */}
+                <Route exact path = "/" element={ <Home /> } />
 
-          <Routes>
-
-              {/* Checkout Page */}
-              <Route exact path="/checkout" element={ <Checkout /> } />
-
-              {/* Home Page Rendering */}
-              <Route exact path = "/" element={ <Home /> } />
-
-
-          </Routes>
-        </div>
-    </Router>
-    
+            </Routes>
+          </div>
+      </Router>
   );
 }
 
