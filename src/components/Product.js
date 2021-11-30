@@ -1,4 +1,3 @@
-import { display } from '@mui/system';
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 import '../styles/Product.css';
