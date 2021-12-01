@@ -12,7 +12,7 @@ function App() {
 
     useEffect(() => {
         auth.onAuthStateChanged(authUser => {
-          console.log(`The user is: ${authUser}`);
+          console.log(`The user is: ${ authUser && authUser.email}`);
           if(authUser)
           {
               // the User just logged in or the user was logged out

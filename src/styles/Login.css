@@ -38,6 +38,7 @@
 
 .loginpage__signinbtn{
     margin-top: 10px;
+    cursor: pointer;
     background-color: #f0c14b;
     padding: 5px;
     border-radius: 3px;
@@ -49,6 +50,7 @@
 }
 
 .loginpage__createAccBtn{
+    cursor: pointer;
     padding: 5px;
     border-radius: 3px;
 }

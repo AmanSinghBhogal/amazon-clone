@@ -7,7 +7,7 @@ import Header from './Hearder'
 
 function Checkout()
 {
-    const [{ cart }, disptch] = useStateValue();
+    const [{ cart, user }, disptch] = useStateValue();
 
     return(
         <div>
@@ -22,10 +22,10 @@ function Checkout()
 
                     {/* Cart */}
                     <div>
-
+                        <h3>Hello, {user && user.email}</h3>
                         {/* Title for the cart */}
                         <h2 className='checkout__title'>
-                            Your shopping Cart
+                            {cart.length!=0? 'Your shopping Cart' : 'Your Cart is Currently Empty.'}
                         </h2>
                         {/* Cart Product */}
 

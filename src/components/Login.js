@@ -68,7 +68,7 @@ function Login()
                 <input type='password' value={password} onChange={event => setPassword(event.target.value)}></input>
 
                 {/* Sign In Button */}
-                <button type='submit' className='loginpage__signinbtn' onClick={SignIn}>Sign in</button>
+                <button type="submit" className='loginpage__signinbtn' onClick={SignIn}>Sign in</button>
 
                 {/* Instructions */}
                 <p className='loginpage__instruction'>
